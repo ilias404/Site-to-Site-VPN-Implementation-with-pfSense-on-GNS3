@@ -177,3 +177,22 @@ write memory
 ```
 
 <img width="780" height="486" alt="image" src="https://github.com/user-attachments/assets/b728cfe8-e3e9-4fc9-b42c-98f20fc6343b" />
+
+## pfSense Configuration
+
+Two pfSense firewalls were deployed, one at each site.
+
+Each pfSense instance uses two interfaces:
+
+- `WAN` toward the edge router
+- `LAN` toward the internal network
+
+### Main Site pfSense
+
+```text
+WAN
+IP Address : 10.0.1.2/30
+Gateway    : 10.0.1.1
+
+LAN
+IP Address : 192.168.1.1/24
