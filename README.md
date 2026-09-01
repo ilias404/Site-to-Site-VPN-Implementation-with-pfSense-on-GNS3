@@ -299,7 +299,6 @@ Save and apply.
 
 Save and apply.
 
----
 
 The same Pre-Shared Key must be configured on both sides.
 
@@ -311,14 +310,40 @@ Diffie-Hellman Group : 14
 ```
 These parameters provide confidentiality, integrity, and secure key exchange during the IKE negotiation process.
 
+---
 
+## IPsec Phase 2
 
+Phase 2 defines which internal networks are protected by the IPsec tunnel.
 
+In this project, the protected networks are:
 
+- Main Site LAN: `192.168.1.0/24`
+- Branch LAN: `172.16.1.0/24`
 
+### Main Site pfSense
 
+<img width="954" height="303" alt="image" src="https://github.com/user-attachments/assets/eb232b67-7298-46f5-9c7f-9a15f1de5106" />
 
+<img width="941" height="645" alt="image" src="https://github.com/user-attachments/assets/de495bb8-65a0-44c7-9b18-c11ab41db26e" />
 
+<img width="950" height="498" alt="image" src="https://github.com/user-attachments/assets/ef96e2e8-62a5-41d9-aa89-c2634d7fe634" />
 
+Save and apply.
 
+### Branch Site pfSense
+
+<img width="944" height="649" alt="image" src="https://github.com/user-attachments/assets/231e57b4-abaa-462d-b75d-f211b9c3108b" />
+
+<img width="944" height="504" alt="image" src="https://github.com/user-attachments/assets/fcd45f3d-8990-456a-b831-70953f0148c3" />
+
+The Phase 2 configuration uses ESP to protect the traffic exchanged between both LANs.
+
+The cryptographic parameters used are:
+```
+Protocol   : ESP
+Encryption : AES-256
+Hash       : SHA-256
+PFS Group  : 14
+```
 
