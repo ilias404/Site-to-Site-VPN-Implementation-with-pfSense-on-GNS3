@@ -247,3 +247,44 @@ The Windows 10 hosts were also used to access the pfSense web administration int
 <img width="797" height="467" alt="image" src="https://github.com/user-attachments/assets/32e0c3d8-ff79-4876-af96-08321b02e0a2" />
 
 <img width="795" height="459" alt="image" src="https://github.com/user-attachments/assets/83228865-8214-4337-91cb-dcbfac50f747" />
+
+---
+
+## IPsec Site-to-Site VPN
+
+Once basic WAN routing was confirmed to be functional, an IPsec Site-to-Site VPN was configured between the two pfSense firewalls.
+
+The purpose of the tunnel is to securely transport traffic between the two private LANs:
+
+- Main Site LAN: `192.168.1.0/24`
+- Branch LAN: `172.16.1.0/24`
+
+The VPN configuration uses:
+
+- **IKEv2**
+- **IPsec**
+- **Pre-Shared Key authentication**
+- **AES-256 encryption**
+- **SHA-256 integrity**
+- **Diffie-Hellman Group 14**
+
+The VPN peers are the WAN interfaces of both pfSense firewalls:
+
+- Main Site pfSense WAN: `10.0.1.2`
+- Branch Site pfSense WAN: `10.0.2.2`
+
+The next step consists of configuring IPsec Phase 1 and Phase 2 on both firewalls.
+
+## IPsec Phase 1
+
+Phase 1 is responsible for establishing the IKE Security Association between the two VPN gateways.
+
+Both pfSense firewalls must use matching cryptographic and authentication parameters in order for the tunnel negotiation to succeed.
+
+### Main Site pfSense
+
+```text
+Local Gateway  : 10.0.1.2
+Remote Gateway : 10.0.2.2
+IKE Version    : IKEv2
+Authentication : Mutual PSK
