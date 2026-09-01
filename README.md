@@ -103,7 +103,7 @@ Point-to-point links between routers and pfSense firewalls use `/30` subnets bec
 | Branch LAN | pfSense LAN | `172.16.1.1/24` |
 | Branch LAN | Branch Windows 10 host | `172.16.1.2/24` |
 
-The public-looking address ranges `203.0.113.0/24` and `198.51.100.0/24` were used only inside the laboratory environment to represent Internet-facing networks.
+The documentation address ranges `203.0.113.0/24` and `198.51.100.0/24` were used only inside the laboratory environment to represent Internet-facing networks.
 
 ---
 
@@ -291,7 +291,7 @@ The VPN peers are the WAN interfaces of both pfSense firewalls:
 - Main Site pfSense WAN: `10.0.1.2`
 - Branch Site pfSense WAN: `10.0.2.2`
 
-The next step consists of configuring IPsec Phase 1 and Phase 2 on both firewalls.
+The IPsec configuration was divided into Phase 1 and Phase 2.
 
 ---
 
@@ -446,3 +446,13 @@ The completed lab demonstrated:
 - Removal of temporary permissive firewall rules after troubleshooting
 
 The successful ping tests between `192.168.1.102` and `172.16.1.2` confirmed that both internal networks could communicate through the VPN tunnel.
+
+---
+
+## Conclusion
+
+This project provided a practical implementation of an IPsec Site-to-Site VPN using pfSense and GNS3.
+
+By first establishing WAN connectivity and then configuring IKEv2 and IPsec between both pfSense gateways, the main site and remote branch were successfully interconnected through an encrypted tunnel.
+
+The final tests confirmed bidirectional communication between both private LANs and validated the overall VPN design.
