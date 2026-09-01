@@ -1,7 +1,3 @@
-# Site-to-Site-VPN-Implementation-with-pfSense-on-GNS3
-
-<img width="1269" height="636" alt="image" src="https://github.com/user-attachments/assets/8b95d42c-a9e9-4547-98d9-86eb9af44f96" />
-
 # Site-to-Site VPN Implementation with pfSense on GNS3
 
 ## Project Overview
@@ -63,7 +59,7 @@ The final GNS3 lab contains:
 
 The IPsec tunnel is established between the two pfSense firewalls, while the routers between both sites simulate an untrusted WAN environment.
 
-
+<img width="1269" height="636" alt="image" src="https://github.com/user-attachments/assets/8b95d42c-a9e9-4547-98d9-86eb9af44f96" />
 
 
 
