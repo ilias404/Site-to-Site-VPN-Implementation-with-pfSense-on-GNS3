@@ -1,5 +1,24 @@
 # Site-to-Site VPN Implementation with pfSense on GNS3
 
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Objectives](#objectives)
+- [Network Architecture](#network-architecture)
+- [IP Addressing Plan](#ip-addressing-plan)
+- [WAN Routing Configuration](#wan-routing-configuration)
+- [pfSense Configuration](#pfsense-configuration)
+- [End-Host Configuration](#end-host-configuration)
+- [IPsec Site-to-Site VPN](#ipsec-site-to-site-vpn)
+  - [Phase 1](#phase-1)
+  - [Phase 2](#phase-2)
+- [Firewall Rules](#firewall-rules)
+- [IPsec Tunnel Validation](#ipsec-tunnel-validation)
+- [End-to-End Connectivity Test](#end-to-end-connectivity-test)
+- [Results](#results)
+- [Conclusion](#conclusion)
+
+
 ## Project Overview
 
 This project was carried out during a one-month internship at **CDG Maroc**.
