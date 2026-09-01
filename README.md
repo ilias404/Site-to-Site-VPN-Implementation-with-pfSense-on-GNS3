@@ -387,3 +387,43 @@ This validation confirmed that:
 - Phase 2 was successfully installed
 - The protected networks were correctly defined
 - Encrypted traffic was being exchanged between both sites
+
+---
+
+## End-to-End Connectivity Test
+
+The final validation consisted of testing communication between hosts located on opposite sides of the VPN tunnel.
+
+<img width="462" height="200" alt="image" src="https://github.com/user-attachments/assets/0e7cc433-e741-4c64-af98-8bd532b5837e" />
+
+<img width="472" height="201" alt="image" src="https://github.com/user-attachments/assets/f30d3677-cf5d-482a-9309-0aebf7a1e227" />
+
+The successful bidirectional ICMP tests confirmed that both private LANs could communicate through the Site-to-Site VPN.
+
+This also verified that:
+
+- Routing between both LANs was correct
+- The IPsec tunnel was carrying user traffic
+- The firewall rules permitted the required communication
+- Both remote networks were reachable through the VPN
+
+---
+
+## Results
+
+The final implementation successfully achieved the main objective of the project: securely interconnecting two geographically separated private networks through a simulated WAN environment.
+
+The completed lab demonstrated:
+
+- Functional LAN connectivity at both sites
+- Functional WAN routing across the simulated Internet
+- Successful communication between both pfSense WAN interfaces
+- Successful IKEv2 negotiation
+- Successful IPsec Phase 1 establishment
+- Successful Phase 2 Child SA installation
+- Bidirectional communication between both private LANs
+- Actual packet exchange through the encrypted tunnel
+- Proper routing of protected traffic through IPsec
+- Removal of temporary permissive firewall rules after troubleshooting
+
+The successful ping tests between `192.168.1.102` and `172.16.1.2` confirmed that both internal networks could communicate through the VPN tunnel.
