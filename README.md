@@ -216,3 +216,7 @@ The branch LAN hosts use `172.16.1.1` as their default gateway.
 Before configuring IPsec, connectivity between both pfSense WAN interfaces was validated across the simulated Internet.
 
 This step was important to confirm that the underlying routing infrastructure was functional before introducing the VPN layer.
+
+<img width="797" height="467" alt="image" src="https://github.com/user-attachments/assets/32e0c3d8-ff79-4876-af96-08321b02e0a2" />
+
+<img width="795" height="459" alt="image" src="https://github.com/user-attachments/assets/83228865-8214-4337-91cb-dcbfac50f747" />
