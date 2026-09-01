@@ -88,6 +88,7 @@ Point-to-point links between routers and pfSense firewalls use `/30` subnets bec
 
 The public-looking address ranges `203.0.113.0/24` and `198.51.100.0/24` were used only inside the laboratory environment to represent Internet-facing networks.
 
+---
 
 ## WAN Routing Configuration
 
@@ -122,7 +123,6 @@ ip route 0.0.0.0 0.0.0.0 203.0.113.2
 end
 write memory
 ```
-
 
 <img width="698" height="523" alt="image" src="https://github.com/user-attachments/assets/e0a87e76-63a9-4777-ab1f-d9ca95d714a2" />
 
@@ -178,6 +178,8 @@ write memory
 
 <img width="780" height="486" alt="image" src="https://github.com/user-attachments/assets/b728cfe8-e3e9-4fc9-b42c-98f20fc6343b" />
 
+---
+
 ## pfSense Configuration
 
 Two pfSense firewalls were deployed, one at each site.
@@ -217,7 +219,6 @@ Before configuring IPsec, connectivity between both pfSense WAN interfaces was v
 
 This step was important to confirm that the underlying routing infrastructure was functional before introducing the VPN layer.
 
-
 ---
 
 ## End-Host Configuration
@@ -236,13 +237,13 @@ Gateway    : 192.168.1.1
 ```
 
 ### Branch Site Test Host
+
 ```
 IP Address : 172.16.1.2/24
 Gateway    : 172.16.1.1
 ```
 
 The Windows 10 hosts were also used to access the pfSense web administration interfaces through their respective LAN gateways.
-
 
 <img width="797" height="467" alt="image" src="https://github.com/user-attachments/assets/32e0c3d8-ff79-4876-af96-08321b02e0a2" />
 
@@ -275,6 +276,8 @@ The VPN peers are the WAN interfaces of both pfSense firewalls:
 
 The next step consists of configuring IPsec Phase 1 and Phase 2 on both firewalls.
 
+---
+
 ## IPsec Phase 1
 
 Phase 1 is responsible for establishing the IKE Security Association between the two VPN gateways.
@@ -298,7 +301,6 @@ Save and apply.
 <img width="889" height="529" alt="image" src="https://github.com/user-attachments/assets/1a36d61f-d750-4eab-9232-74345af46b8f" />
 
 Save and apply.
-
 
 The same Pre-Shared Key must be configured on both sides.
 
