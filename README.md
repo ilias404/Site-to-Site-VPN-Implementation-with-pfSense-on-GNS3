@@ -346,4 +346,4 @@ Encryption : AES-256
 Hash       : SHA-256
 PFS Group  : 14
 ```
-
+Both pfSense firewalls must use matching Phase 2 settings for the Child Security Association to be successfully installed.
