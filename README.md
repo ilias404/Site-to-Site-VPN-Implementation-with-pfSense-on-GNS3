@@ -378,3 +378,12 @@ The pfSense IPsec status page confirmed that both negotiation stages were active
 
 <img width="972" height="551" alt="image" src="https://github.com/user-attachments/assets/d5dcca98-252c-4f53-b87a-b24b7d4b9b10" />
 
+The IPsec status page also displayed packet and byte counters, confirming that traffic was actively passing through the encrypted tunnel rather than simply showing an idle connection.
+
+This validation confirmed that:
+
+- IKEv2 negotiation completed successfully
+- Phase 1 was established
+- Phase 2 was successfully installed
+- The protected networks were correctly defined
+- Encrypted traffic was being exchanged between both sites
