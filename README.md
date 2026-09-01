@@ -283,8 +283,42 @@ Both pfSense firewalls must use matching cryptographic and authentication parame
 
 ### Main Site pfSense
 
-```text
-Local Gateway  : 10.0.1.2
-Remote Gateway : 10.0.2.2
-IKE Version    : IKEv2
-Authentication : Mutual PSK
+<img width="1028" height="366" alt="image" src="https://github.com/user-attachments/assets/14bff21a-4c26-4ee6-ad96-16ae8d57e3fc" />
+
+<img width="675" height="619" alt="image" src="https://github.com/user-attachments/assets/f2e1d645-2e82-49e0-b65d-5d1baba121d6" />
+
+<img width="889" height="529" alt="image" src="https://github.com/user-attachments/assets/8ca574bf-f5f5-4357-91fa-fb909e41e80f" />
+
+Save and apply.
+
+### Branch Site pfSense
+
+<img width="1027" height="683" alt="image" src="https://github.com/user-attachments/assets/845f5e18-8266-4778-9b7f-6d5393f0a4bf" />
+
+<img width="889" height="529" alt="image" src="https://github.com/user-attachments/assets/1a36d61f-d750-4eab-9232-74345af46b8f" />
+
+Save and apply.
+
+---
+
+The same Pre-Shared Key must be configured on both sides.
+
+The cryptographic parameters used for Phase 1 are:
+```
+Encryption Algorithm : AES-256
+Hash Algorithm       : SHA-256
+Diffie-Hellman Group : 14
+```
+These parameters provide confidentiality, integrity, and secure key exchange during the IKE negotiation process.
+
+
+
+
+
+
+
+
+
+
+
+
