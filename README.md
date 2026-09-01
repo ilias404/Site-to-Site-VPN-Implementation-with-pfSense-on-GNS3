@@ -196,3 +196,23 @@ Gateway    : 10.0.1.1
 
 LAN
 IP Address : 192.168.1.1/24
+```
+
+The LAN interface acts as the default gateway for hosts located inside the main-site network.
+
+### Branch Site pfSense
+
+```
+WAN
+IP Address : 10.0.2.2/30
+Gateway    : 10.0.2.1
+
+LAN
+IP Address : 172.16.1.1/24
+```
+
+The branch LAN hosts use `172.16.1.1` as their default gateway.
+
+Before configuring IPsec, connectivity between both pfSense WAN interfaces was validated across the simulated Internet.
+
+This step was important to confirm that the underlying routing infrastructure was functional before introducing the VPN layer.
