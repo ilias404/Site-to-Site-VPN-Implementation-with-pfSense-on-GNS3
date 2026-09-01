@@ -61,7 +61,35 @@ The IPsec tunnel is established between the two pfSense firewalls, while the rou
 
 <img width="1269" height="636" alt="image" src="https://github.com/user-attachments/assets/8b95d42c-a9e9-4547-98d9-86eb9af44f96" />
 
+## IP Addressing Plan
 
+The network was divided into separate LAN and WAN segments in order to clearly distinguish internal enterprise networks from point-to-point transit links.
+
+The main site uses the private network `192.168.1.0/24`, while the branch site uses `172.16.1.0/24`.
+
+Point-to-point links between routers and pfSense firewalls use `/30` subnets because only two usable IP addresses are required on each link.
+
+| Segment | Device | IP Address |
+|---|---|---|
+| Main LAN | pfSense LAN | `192.168.1.1/24` |
+| Main LAN | Main test workstation | `192.168.1.102/24` |
+| Main pfSense ↔ CDG Router | pfSense WAN | `10.0.1.2/30` |
+| Main pfSense ↔ CDG Router | CDG Router | `10.0.1.1/30` |
+| CDG Router ↔ ISP | CDG Router | `203.0.113.1/30` |
+| CDG Router ↔ ISP | ISP Router | `203.0.113.2/30` |
+| ISP ↔ Branch Router | ISP Router | `198.51.100.1/30` |
+| ISP ↔ Branch Router | Branch Router | `198.51.100.2/30` |
+| Branch Router ↔ pfSense | Branch Router | `10.0.2.1/30` |
+| Branch Router ↔ pfSense | pfSense WAN | `10.0.2.2/30` |
+| Branch LAN | pfSense LAN | `172.16.1.1/24` |
+| Branch LAN | Branch Windows 10 host | `172.16.1.2/24` |
+
+The public-looking address ranges `203.0.113.0/24` and `198.51.100.0/24` were used only inside the laboratory environment to represent Internet-facing networks.
+
+> **Screenshot suggestion:** If the addressing is already visible on the final GNS3 topology, the topology screenshot can be reused here instead of adding a second image.
+
+```markdown
+![IP addressing overview](screenshots/gns3-topology.png)
 
 
 
