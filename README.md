@@ -151,6 +151,7 @@ end
 write memory
 ```
 <img width="802" height="457" alt="image" src="https://github.com/user-attachments/assets/850fe640-07bd-447f-a17a-251adabd6652" />
+
 The ISP router therefore knows how to reach both pfSense-facing WAN networks.
 
 ### Branch Router
