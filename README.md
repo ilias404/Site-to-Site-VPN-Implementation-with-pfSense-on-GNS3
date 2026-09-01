@@ -86,11 +86,39 @@ Point-to-point links between routers and pfSense firewalls use `/30` subnets bec
 
 The public-looking address ranges `203.0.113.0/24` and `198.51.100.0/24` were used only inside the laboratory environment to represent Internet-facing networks.
 
-> **Screenshot suggestion:** If the addressing is already visible on the final GNS3 topology, the topology screenshot can be reused here instead of adding a second image.
 
-```markdown
-![IP addressing overview](screenshots/gns3-topology.png)
+## WAN Routing Configuration
 
+Before configuring the VPN, basic routing between both sites had to be validated.
+
+The WAN path consists of three routers:
+
+- `CDG-ROUTER`
+- `ISP Router`
+- `BRANCH-ROUTER`
+
+The two enterprise edge routers use default routes toward the simulated ISP, while the ISP router contains static routes toward the two pfSense WAN networks.
+
+### CDG Router
+
+The CDG edge router connects the main-site pfSense firewall to the ISP router.
+
+```bash
+enable
+configure terminal
+
+interface GigabitEthernet0/0
+ ip address 10.0.1.1 255.255.255.252
+ no shutdown
+
+interface GigabitEthernet0/1
+ ip address 203.0.113.1 255.255.255.252
+ no shutdown
+
+ip route 0.0.0.0 0.0.0.0 203.0.113.2
+
+end
+write memory
 
 
 
