@@ -119,14 +119,58 @@ ip route 0.0.0.0 0.0.0.0 203.0.113.2
 
 end
 write memory
+```
 
 
+<img width="698" height="523" alt="image" src="https://github.com/user-attachments/assets/e0a87e76-63a9-4777-ab1f-d9ca95d714a2" />
 
+The default route sends all unknown traffic toward the simulated ISP.
 
+### ISP Router
 
+The ISP router interconnects both enterprise edge routers.
 
+```bash
+enable
+configure terminal
 
+interface GigabitEthernet0/0
+ ip address 203.0.113.2 255.255.255.252
+ no shutdown
 
+interface GigabitEthernet0/1
+ ip address 198.51.100.1 255.255.255.252
+ no shutdown
 
+ip route 10.0.1.0 255.255.255.252 203.0.113.1
+ip route 10.0.2.0 255.255.255.252 198.51.100.2
 
+end
+write memory
+```
+<img width="802" height="457" alt="image" src="https://github.com/user-attachments/assets/850fe640-07bd-447f-a17a-251adabd6652" />
+The ISP router therefore knows how to reach both pfSense-facing WAN networks.
 
+### Branch Router
+
+The branch router connects the remote-site pfSense firewall to the ISP router.
+
+```bash
+enable
+configure terminal
+
+interface GigabitEthernet0/1
+ ip address 198.51.100.2 255.255.255.252
+ no shutdown
+
+interface GigabitEthernet0/0
+ ip address 10.0.2.1 255.255.255.252
+ no shutdown
+
+ip route 0.0.0.0 0.0.0.0 198.51.100.1
+
+end
+write memory
+```
+
+<img width="780" height="486" alt="image" src="https://github.com/user-attachments/assets/b728cfe8-e3e9-4fc9-b42c-98f20fc6343b" />
