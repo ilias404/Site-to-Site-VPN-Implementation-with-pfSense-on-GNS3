@@ -347,3 +347,34 @@ Hash       : SHA-256
 PFS Group  : 14
 ```
 Both pfSense firewalls must use matching Phase 2 settings for the Child Security Association to be successfully installed.
+
+---
+
+## Firewall Rules
+
+pfSense firewall rules were configured to allow the traffic required for the Site-to-Site VPN.
+
+The protected communication takes place between:
+
+```text
+192.168.1.0/24
+172.16.1.0/24
+```
+Traffic between these two private networks is permitted through the IPsec interface, while unrelated traffic remains subject to the normal pfSense firewall policy.
+
+<img width="952" height="354" alt="image" src="https://github.com/user-attachments/assets/2a8d39ee-db5b-40c9-92e9-74348f676f3d" />
+
+<img width="948" height="592" alt="image" src="https://github.com/user-attachments/assets/9a40864f-ab91-4758-8e33-f489f44df54f" />
+
+Save and apply.
+
+---
+
+## IPsec Tunnel Validation
+
+After configuring Phase 1 and Phase 2, the IPsec tunnel was successfully established between the two pfSense firewalls.
+
+The pfSense IPsec status page confirmed that both negotiation stages were active:
+
+<img width="972" height="551" alt="image" src="https://github.com/user-attachments/assets/d5dcca98-252c-4f53-b87a-b24b7d4b9b10" />
+
