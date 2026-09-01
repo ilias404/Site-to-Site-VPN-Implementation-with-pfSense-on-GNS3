@@ -61,6 +61,8 @@ The IPsec tunnel is established between the two pfSense firewalls, while the rou
 
 <img width="1269" height="636" alt="image" src="https://github.com/user-attachments/assets/8b95d42c-a9e9-4547-98d9-86eb9af44f96" />
 
+---
+
 ## IP Addressing Plan
 
 The network was divided into separate LAN and WAN segments in order to clearly distinguish internal enterprise networks from point-to-point transit links.
