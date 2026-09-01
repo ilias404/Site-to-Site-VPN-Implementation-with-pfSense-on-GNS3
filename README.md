@@ -217,6 +217,33 @@ Before configuring IPsec, connectivity between both pfSense WAN interfaces was v
 
 This step was important to confirm that the underlying routing infrastructure was functional before introducing the VPN layer.
 
+
+---
+
+## End-Host Configuration
+
+Windows 10 virtual machines were used as end hosts inside both LANs.
+
+The main site contains multiple Windows 10 systems connected through access switches, while another Windows 10 system is connected to the branch LAN.
+
+The systems used for the final VPN validation were configured as follows.
+
+### Main Site Test Host
+
+```text
+IP Address : 192.168.1.102/24
+Gateway    : 192.168.1.1
+```
+
+### Branch Site Test Host
+```
+IP Address : 172.16.1.2/24
+Gateway    : 172.16.1.1
+```
+
+The Windows 10 hosts were also used to access the pfSense web administration interfaces through their respective LAN gateways.
+
+
 <img width="797" height="467" alt="image" src="https://github.com/user-attachments/assets/32e0c3d8-ff79-4876-af96-08321b02e0a2" />
 
 <img width="795" height="459" alt="image" src="https://github.com/user-attachments/assets/83228865-8214-4337-91cb-dcbfac50f747" />
