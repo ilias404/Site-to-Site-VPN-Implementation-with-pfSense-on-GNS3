@@ -63,13 +63,6 @@ The final GNS3 lab contains:
 
 The IPsec tunnel is established between the two pfSense firewalls, while the routers between both sites simulate an untrusted WAN environment.
 
-> **Screenshot suggestion:** Insert the final labeled GNS3 topology here.
-
-```markdown
-![Final GNS3 topology](screenshots/gns3-topology.png)
-
-
-
 
 
 
