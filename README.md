@@ -127,6 +127,7 @@ The CDG edge router connects the main-site pfSense firewall to the ISP router.
 ```bash
 enable
 configure terminal
+hostname CDG-ROUTER
 
 interface GigabitEthernet0/0
  ip address 10.0.1.1 255.255.255.252
@@ -153,6 +154,7 @@ The ISP router interconnects both enterprise edge routers.
 ```bash
 enable
 configure terminal
+hostname Internet
 
 interface GigabitEthernet0/0
  ip address 203.0.113.2 255.255.255.252
@@ -179,6 +181,7 @@ The branch router connects the remote-site pfSense firewall to the ISP router.
 ```bash
 enable
 configure terminal
+hostname BRANCH-ROUTER
 
 interface GigabitEthernet0/1
  ip address 198.51.100.2 255.255.255.252
